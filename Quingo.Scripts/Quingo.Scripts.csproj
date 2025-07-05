@@ -20,7 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Quingo\Quingo\Quingo.csproj" />
     <ProjectReference Include="..\..\Quingo\Quingo.Shared\Quingo.Shared.csproj" />
-    <ProjectReference Include="..\Org.OpenAPITools\Org.OpenAPITools.csproj" />
   </ItemGroup>
 
   <ItemGroup>

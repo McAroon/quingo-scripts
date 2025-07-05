@@ -10,7 +10,6 @@ using Quingo.Infrastructure.Database;
 using Quingo.Infrastructure.Database.Repos;
 using Quingo.Infrastructure.Files;
 using Quingo.Scripts;
-using Quingo.Scripts.ApiFootball;
 using Quingo.Scripts.Excel;
 using Quingo.Scripts.Footbingo;
 using Quingo.Scripts.Transfermarkt;
@@ -30,8 +29,6 @@ builder.ConfigureServices(services =>
         options.UseNpgsql(connectionString));
     services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
     services.AddTransient<GenerateStandardBingo>();
-
-    services.AddTransient<ApiFootballClient>();
 
     // S3
     var s3Settings = configuration.GetSection(nameof(S3Settings)).Get<S3Settings>() ?? new S3Settings();
@@ -55,9 +52,6 @@ builder.ConfigureServices(services =>
     services.Configure<ScriptsSettings>(configuration.GetSection(nameof(ScriptsSettings)));
 
     services.AddTransient<TransfermarktClient>();
-    services.AddTransient<GenerateFootballBingoTm>();
-    services.AddTransient<FbPicUpdate>();
-    services.AddTransient<GoogleClient>();
     services.AddTransient<PackRepo>();
     services.AddTransient<ICacheService, NoopCache>();
     services.AddTransient<FileService>();

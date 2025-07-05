@@ -5,11 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quingo.Scripts", "Quingo.Scripts\Quingo.Scripts.csproj", "{92C30002-E0EB-4650-8119-3B51C0E05A27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.OpenAPITools", "Org.OpenAPITools\Org.OpenAPITools.csproj", "{464F6B9C-5621-4D5E-A9C9-18B53E2DED87}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quingo", "..\Quingo\Quingo\Quingo.csproj", "{BEC1F881-6A58-4805-BB4D-81F2BDC255DE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Org.OpenAPITools.Test", "Org.OpenAPITools.Test\Org.OpenAPITools.Test.csproj", "{BBDF0A8E-5DF0-49AE-8EC1-775957A30394}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quingo.Shared", "..\Quingo\Quingo.Shared\Quingo.Shared.csproj", "{8C1DD180-4EE8-4724-B6D3-A8249F483E4C}"
 EndProject
@@ -23,18 +19,10 @@ Global
 		{92C30002-E0EB-4650-8119-3B51C0E05A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92C30002-E0EB-4650-8119-3B51C0E05A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92C30002-E0EB-4650-8119-3B51C0E05A27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{464F6B9C-5621-4D5E-A9C9-18B53E2DED87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{464F6B9C-5621-4D5E-A9C9-18B53E2DED87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{464F6B9C-5621-4D5E-A9C9-18B53E2DED87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{464F6B9C-5621-4D5E-A9C9-18B53E2DED87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEC1F881-6A58-4805-BB4D-81F2BDC255DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEC1F881-6A58-4805-BB4D-81F2BDC255DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEC1F881-6A58-4805-BB4D-81F2BDC255DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEC1F881-6A58-4805-BB4D-81F2BDC255DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BBDF0A8E-5DF0-49AE-8EC1-775957A30394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBDF0A8E-5DF0-49AE-8EC1-775957A30394}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBDF0A8E-5DF0-49AE-8EC1-775957A30394}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBDF0A8E-5DF0-49AE-8EC1-775957A30394}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C1DD180-4EE8-4724-B6D3-A8249F483E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C1DD180-4EE8-4724-B6D3-A8249F483E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C1DD180-4EE8-4724-B6D3-A8249F483E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
