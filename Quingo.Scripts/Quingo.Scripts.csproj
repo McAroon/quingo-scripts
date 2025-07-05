@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="EPPlus" Version="8.0.5" />
+    <PackageReference Include="F23.StringSimilarity" Version="6.0.0" />
+    <PackageReference Include="Google.Apis" Version="1.68.0" />
+    <PackageReference Include="Google.Apis.CustomSearchAPI.v1" Version="1.68.0.3520" />
+    <PackageReference Include="Google.Apis.Kgsearch.v1" Version="1.68.0.2143" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.37" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Quingo\Quingo\Quingo.csproj" />
+    <ProjectReference Include="..\..\Quingo\Quingo.Shared\Quingo.Shared.csproj" />
+    <ProjectReference Include="..\Org.OpenAPITools\Org.OpenAPITools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="scriptsAppsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="scriptsAppsettings.example.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

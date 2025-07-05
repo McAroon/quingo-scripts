@@ -1,0 +1,28 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=5432;Database=quingo;User Id=postgres;Password=changeme;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "S3Settings": {
+    "Endpoint": "http://localhost:9000",
+    "AccessKey": "changeme",
+    "SecretKey": "changeme"
+  },
+  "FileStoreSettings": {
+    "Bucket": "quingo",
+    "UrlPrefix": "http://localhost:9000/quingo/"
+  },
+  "ScriptsSettings": {
+    "FootbingoFileDirectory": "%UserProfile%\\Desktop\\docs\\footbingo",
+    "FootbingoExcelFile": "Footbingo.xlsx",
+    "TransfermarktApiUrl": "http://localhost:8000",
+    "TransfermarktThrottleMs": 1000,
+    "TransfermarktSleepOnThrottledMs": 125000
+  }
+}
