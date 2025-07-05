@@ -10,5 +10,5 @@ public class PlayerMarketValueModel
     [ExcelExtractUrl("Player")]
     public string Url { get; set; }
     
-    public string PlayerId => Url.Split('/').Last().Trim();
+    public string PlayerId => Url?.Split('/').Last().Trim();
 }

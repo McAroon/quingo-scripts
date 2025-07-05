@@ -103,9 +103,21 @@ public class QuingoImportService
         if (restoreDeleted && link.DeletedAt != null && link.DeletedByUserId == null)
         {
             link.DeletedAt = null;
+            _logger.LogInformation("Restored node link: {from} {to} {type}", nodeFrom.Name, nodeTo.Name, linkType);
         }
 
         return link;
+    }
+
+    public void DeleteLink(Node nodeFrom, Node nodeTo, string linkType)
+    {
+        if (nodeFrom == null || nodeTo == null || nodeFrom.DeletedAt != null || nodeTo.DeletedAt != null) return;
+        
+        var link = nodeFrom.NodeLinksFrom.FirstOrDefault(x => x.NodeTo.Name == nodeTo.Name);
+        if (link is not { DeletedAt: null }) return;
+        
+        link.DeletedAt = DateTime.UtcNow;
+        _logger.LogInformation("Deleted node link: {from} {to} {type}", nodeFrom.Name, nodeTo.Name, linkType);
     }
     
     private void CreateTag(string tagName, Pack pack)

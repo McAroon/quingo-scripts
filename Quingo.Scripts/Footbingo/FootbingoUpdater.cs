@@ -804,7 +804,7 @@ public class FootbingoUpdater
             await _db.SaveChangesAsync();
         }
 
-        async Task Create50Mil()
+        async Task Create50Mil(bool useExcelData = true)
         {
             _logger.LogInformation("Creating 50Mil other");
             var node = _quingoImportService.CreateNode("50+ Millions", TagOther, _pack);
@@ -812,13 +812,27 @@ public class FootbingoUpdater
             foreach (var player in players)
             {
                 var playerId = player.Meta.PropertiesDict["tm_player_id"];
-                var profile = await _transfermarktService.GetPlayerProfile(playerId);
-                var mvStr = profile.MarketValue;
-                if (string.IsNullOrEmpty(mvStr)) continue;
-                var mv = ParseMarketValue(mvStr);
-                if (mv >= 50_000_000)
+                bool create;
+                if (useExcelData)
                 {
-                    _quingoImportService.CreateLink(player, node, LinkPlayerOther, _pack);
+                    create = _excelData.PlayerMarketValues.FirstOrDefault(x => x.PlayerId == playerId) != null;
+                }
+                else
+                {
+                    var profile = await _transfermarktService.GetPlayerProfile(playerId);
+                    var mvStr = profile.MarketValue;
+                    if (string.IsNullOrEmpty(mvStr)) continue;
+                    var mv = ParseMarketValue(mvStr);
+                    create = mv >= 50_000_000;
+                }
+                
+                if (create)
+                {
+                    _quingoImportService.CreateLink(player, node, LinkPlayerOther, _pack, true);
+                }
+                else
+                {
+                    _quingoImportService.DeleteLink(player, node, LinkPlayerOther);
                 }
             }
 
