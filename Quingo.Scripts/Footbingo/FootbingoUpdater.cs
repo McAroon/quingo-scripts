@@ -640,7 +640,7 @@ public class FootbingoUpdater
         await Create10Clubs();
         await CreateStatsOther();
         await CreateProfileOther();
-        await Create50Mil();
+        await Create50Mil(true);
         await CreatePlayerUrlLists();
 
         return;
@@ -793,6 +793,10 @@ public class FootbingoUpdater
                 if (!string.IsNullOrEmpty(profile.Age) && int.TryParse(profile.Age, out var age) && age <= 23)
                 {
                     _quingoImportService.CreateLink(player, under23Node, LinkPlayerOther, _pack);
+                }
+                else
+                {
+                    _quingoImportService.DeleteLink(player, under23Node, LinkPlayerOther);
                 }
 
                 if (profile.Citizenship?.Count > 1)
